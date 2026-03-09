@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "workspace-tools"
+version = "0.1.0"
+description = "Cross-platform CLI toolkit for PDF manipulation and conversion"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+
+# Core Python dependencies (pure-Python, no external binaries required)
+dependencies = [
+    "pypdf>=4.0",
+    "pdf2docx>=0.5",
+    "pdfminer.six>=20221105",
+    "Pillow>=10.0",
+    "PyYAML>=6.0",
+]
+
+# Optional extras for extended functionality
+[project.optional-dependencies]
+images = ["pdf2image>=1.16"]      # requires poppler on PATH
+ocr    = ["pytesseract>=0.3"]     # requires tesseract on PATH
+full   = [
+    "pdf2image>=1.16",
+    "pytesseract>=0.3",
+]
+
+[project.scripts]
+pdf-tool = "cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cli*", "core*", "modules*", "engines*", "utils*"]
+
+[tool.setuptools.package-dir]
+"" = "."
