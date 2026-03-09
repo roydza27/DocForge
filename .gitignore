@@ -70,3 +70,5 @@ resume_images
 *.docx
 *.odt
 
+*.docx#
+.~lock*
