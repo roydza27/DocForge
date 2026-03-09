@@ -33,7 +33,7 @@ Install Python 3.10+ and the following external tools (add to PATH):
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourorg/workspace-tools.git
+git clone https://github.com/roydza27/workspace-tools.git
 cd workspace-tools
 
 # Install (editable mode recommended during development)
